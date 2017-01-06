@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@mixin center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+	color: #1d1d1d;
+}
+a:hover {
+	text-decoration: underline;
+}
+html {
+	background: #f0f0f0;
+	color: #1d1d1d;
+}
+body {
+	height: 100vh;
+	width: 100vw;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	@include center;
+	flex-direction: column;
+}
+.main-container {
+	background: #ffffff;
+	width: 60vw;
+	max-width: 720px;
+	height: 600px;
+	box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+	overflow-y: auto;
+	&::-webkit-scrollbar {
+		width: 10px;
+	}
+	&::-webkit-scrollbar-track {
+		-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: darkgrey;
+		outline: 1px solid slategrey;
+	}
+}
+.sort {
+	cursor: pointer;
+}
+.green {
+	color: lighten(#006400, 20%);
+}
+table {
+	width: 100%;
+	th {
+		font-size: 11px;
+		padding-top: 15px;
+		padding-bottom: 15px;
+	}
+	td {
+		padding-top: 20px;
+		padding-bottom: 20px;
+		text-align: center;
+		font-size: 13px;
+	}
+	tr {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	tbody {
+		tr:nth-child(odd) {
+			background: #f7f7f7;
+		}
+		tr:hover {
+			background: lighten(#006400, 70%);
+		}
+	}
+}
+.header-text {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-size: 12px;
+	text-transform: uppercase;
+}
+@media screen and (max-width: 600px) {
+	.main-container {
+		width: 90vw;
+		height: 90vh;
+	}
+}
